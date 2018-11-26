@@ -1,0 +1,28 @@
+{
+  "name": "any-event",
+  "version": "0.0.1",
+  "description": "🍰 模拟NodeJS写的一个事件管理器",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/383514580/any-event.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/383514580/any-event/issues"
+  },
+  "homepage": "https://github.com/383514580/any-event#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.5",
+    "jest": "^23.6.0",
+    "rollup": "^0.67.1",
+    "rollup-plugin-typescript": "^1.0.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.0.1"
+  }
+}
