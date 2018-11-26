@@ -1,8 +1,24 @@
 import EventEmitter from '../src/main';
-test('基础事件绑定和触发是否正确?', ()=>{
+test('on和emit是否正确?', () => {
     const eventEmitter = new EventEmitter();
-    eventEmitter.on('abc', (ev)=>{
-        expect(ev).toBe(1234567);
-    });
+    let result = 0;
+    const listener = (ev:any) => {
+        result = ev;
+    };
+    eventEmitter.on('abc', listener);
     eventEmitter.emit('abc', 1234567);
+    expect(result).toBe(1234567);
+});
+
+
+test('off是否正确?', () => {
+    const eventEmitter = new EventEmitter();
+    let result = 0;
+    const listener = (ev:any) => {
+        result = ev;
+    };
+    eventEmitter.on('abc', listener);
+    eventEmitter.off('abc', listener);
+    eventEmitter.emit('abc', 1234567);
+    expect(result).toBe(0);
 });

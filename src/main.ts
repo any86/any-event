@@ -1,4 +1,4 @@
-type Listener = (payload:any) => void;
+type Listener = (payload: any) => void;
 interface Listeners {
     [propName: string]: Listener[];
 };
@@ -21,13 +21,15 @@ export default class EventEmitter {
     off(eventName: string, listener: Listener) {
         // 指定事件的函数栈
         const listeners = this.listeners[eventName];
-        const index = listeners.findIndex((fn: Listener) => fn === listener);
-        listeners.splice(index, 1);
+        if (undefined !== listeners) {
+            const index = listeners.findIndex((fn: Listener) => fn === listener);
+            listeners.splice(index, 1);
+        }
     };
 
-    emit(eventName: string, payload: any){
+    emit(eventName: string, payload: any) {
         const listeners = this.listeners[eventName];
-        for(let listener of listeners) {
+        for (let listener of listeners) {
             listener(payload);
         }
     };
