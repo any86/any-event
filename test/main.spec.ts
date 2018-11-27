@@ -32,20 +32,11 @@ test('once是否正确?', () => {
 });
 
 
-test('removeAllListeners不指定eventName是否正确?', () => {
+test('off不指定listener运行是否正确?', () => {
     const mockCallback = jest.fn();
     const eventEmitter = new EventEmitter();
     eventEmitter.on('abc', mockCallback);
-    eventEmitter.removeAllListeners();
-    eventEmitter.emit('abc');
-    expect(mockCallback.mock.calls.length).toBe(0);
-});
-
-test('removeAllListeners指定eventName是否正确?', () => {
-    const mockCallback = jest.fn();
-    const eventEmitter = new EventEmitter();
-    eventEmitter.on('abc', mockCallback);
-    eventEmitter.removeAllListeners('abc');
+    eventEmitter.off('abc');
     eventEmitter.emit('abc');
     expect(mockCallback.mock.calls.length).toBe(0);
 });
@@ -57,4 +48,13 @@ test('连续绑定相同事件, 事件触发次数是否正确?', ()=>{
     eventEmitter.on('abc', mockCallback);
     eventEmitter.emit('abc');
     expect(mockCallback.mock.calls.length).toBe(2);
+});
+
+test('destory是否生效?', ()=>{
+    const mockCallback = jest.fn();
+    const eventEmitter = new EventEmitter();
+    eventEmitter.on('abc', mockCallback);
+    eventEmitter.destroy();
+    eventEmitter.emit('abc');
+    expect(mockCallback.mock.calls.length).toBe(0);
 });

@@ -5,15 +5,16 @@ interface ListenersMap {
 
 export default class EventEmitter {
     public listenersMap: ListenersMap;
-    public addListener: (eventName: string, listener: Listener) => void;
-    public removeListener: (eventName: string, listener: Listener) => void;
 
     constructor() {
         this.listenersMap = {};
-        this.addListener = this.on;
-        this.removeListener = this.off;
     };
 
+    /**
+     * 绑定事件
+     * @param {String|Symbol} 事件名
+     * @param {Function} 回调函数
+     */
     on(eventName: string, listener: Listener) {
         if (undefined === this.listenersMap[eventName]) {
             this.listenersMap[eventName] = [];
@@ -25,6 +26,8 @@ export default class EventEmitter {
     /**
      * 添加单次监听器 listener 到名为 eventName 的事件。 
      * 当 eventName 事件下次触发时，监听器会先被移除，然后再调用。
+     * @param {String|Symbol} 事件名
+     * @param {Function} 回调函数
      */
     once(eventName: string, listener: Listener) {
         listener.isOnce = true;
@@ -32,28 +35,30 @@ export default class EventEmitter {
         return this;
     };
 
-    off(eventName: string, listener: Listener) {
-        // 指定事件的函数栈
+    /**
+     * 解除绑定 
+     * 如果不指定listener, 那么解除所有eventName对应回调
+     * @param {String|Symbol} 事件名
+     * @param {Function} 回调函数[可选]
+     */
+    off(eventName: string, listener?: Listener) {
         const listeners = this.listenersMap[eventName];
+        // 事件存在
         if (undefined !== listeners) {
-            const index = listeners.findIndex((fn: Listener) => fn === listener);
-            listeners.splice(index, 1);
+            // 清空事件名对应的所有回调
+            if (undefined === listener) {
+                delete this.listenersMap[eventName];
+            }
+            // 清空指定回调
+            else {
+                const index = listeners.findIndex((fn: Listener) => fn === listener);
+                listeners.splice(index, 1);
+            }
         }
         return this;
     };
 
-    /**
-     * 移除全部监听器或指定的 eventName 事件的监听器。
-     * @param {String} 事件名 
-     */
-    removeAllListeners(eventName?: string) {
-        if (undefined === eventName) {
-            this.listenersMap = {};
-        } else {
-            this.listenersMap[eventName] = [];
-        }
-        return this;
-    };
+
 
     /**
      * 按照监听器注册的顺序，同步地调用每个注册到名为 eventName 的事件的监听器，并传入提供的参数。
@@ -77,5 +82,12 @@ export default class EventEmitter {
         } else {
             return false;
         }
+    };
+
+    /**
+     * 销毁实例
+     */
+    destroy() {
+        this.listenersMap = {};
     };
 };
