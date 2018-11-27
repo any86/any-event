@@ -27,7 +27,7 @@ emitter.emit('add', 1);
 ## 方法
 
 
-### emitter.on(eventName, listener)
+### on(eventName, listener)
 绑定事件
 
 |名称|类型|数据类型|是否必填|说明|
@@ -36,7 +36,7 @@ emitter.emit('add', 1);
 |listener| 参数 |`Function`|是|对应的回调函数|
 |emitter| 返回值 |`EventEmitter`|---|实例|
 
-### emitter.off(eventName, listener)
+### off(eventName, listener)
 解除绑定, 如果不填写`listener`, 那么`eventName`对应的`listener`都会被移除.
 
 |名称|类型|数据类型|是否必填|说明|
@@ -56,7 +56,7 @@ emitter.on('off', callback);
 emitter.emit('add', 1);
 ```
 
-### emitter.once(eventName, listener)
+### once(eventName, listener)
 绑定事件, 只触发一次
 
 |名称|类型|数据类型|是否必填|说明|
@@ -76,7 +76,7 @@ emitter.emit('add', 1);
 emitter.emit('add', 1);
 ```
 
-### emitter.emit(eventName [, ...args])
+### emit(eventName [, ...args])
 触发事件, 支持任意数量参数
 
 |名称|类型|数据类型|是否必填|说明|
@@ -94,7 +94,7 @@ emitter.once('add', callback);
 emitter.emit('add', 1,2,3,4);
 ```
 
-### emitter.destroy()
+### destroy()
 销毁实例
 
 ``` javascript
