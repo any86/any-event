@@ -38,10 +38,11 @@ emitter.emit('add', 1);
 
 ### emitter.off(eventName, listener)
 解除绑定, 如果不填写`listener`, 那么`eventName`对应的`listener`都会被移除.
+
 |名称|类型|数据类型|是否必填|说明|
 |---|---|---|---|---|
 |eventName| 参数 |`String|Symbol`|是|事件名称|
-|listener| 参数 |`Function`|否|对应的回调函数|
+|listener| 参数 |`Function`|是|对应的回调函数|
 |emitter| 返回值 |`EventEmitter`|---|实例|
 
 ``` javascript
