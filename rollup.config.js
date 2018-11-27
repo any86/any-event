@@ -8,10 +8,10 @@ export default {
     })],
     output: [{
         format: 'es',
-        file: 'dist/anyTouch.es.js',
+        file: 'dist/miniEvents.es.js',
     }, {
         format: 'umd',
-        name: 'AnyTouch',
-        file: 'dist/anyTouch.umd.js',
+        name: 'miniEvents',
+        file: 'dist/miniEvents.umd.js',
     }]
 };
