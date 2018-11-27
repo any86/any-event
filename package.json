@@ -1,7 +1,7 @@
 {
-  "name": "any-event",
+  "name": "mini-events",
   "version": "0.0.1",
-  "description": "🍰 模拟NodeJS写的一个事件管理器",
+  "description": "🍰 一个mini事件管理器",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && rollup -c",
