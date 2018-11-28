@@ -1,12 +1,10 @@
-# mini-events [![NPM Version][npm-image]][npm-url] 
-![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/mini-events.svg) 
-[![codecov](https://codecov.io/gh/383514580/mini-events/branch/master/graph/badge.svg)](https://codecov.io/gh/383514580/mini-events) 
-[![CircleCI](https://circleci.com/gh/383514580/mini-events.svg?style=svg)](https://circleci.com/gh/383514580/mini-events)
+# mini-events [![NPM Version][npm-image]][npm-url] ![npm bundle size (minified + gzip)][size-image] [![codecov]([codecov-image])](https://codecov.io/gh/383514580/mini-events) [![CircleCI](https://circleci.com/gh/383514580/mini-events.svg?style=svg)](https://circleci.com/gh/383514580/mini-events)
 
 [npm-image]: https://img.shields.io/npm/v/mini-events.svg
 [npm-url]: https://npmjs.org/package/mini-events
 [downloads-url]: https://npmjs.org/package/mini-events
-
+[size-image]: https://img.shields.io/bundlephobia/minzip/mini-events.svg
+[codecov-image]: https://codecov.io/gh/383514580/mini-events/branch/master/graph/badge.svg 
 
 
 
