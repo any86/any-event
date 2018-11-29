@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "test": "jest",
-    "release": "standard-version"
+    "release": "standard-version",
+    "commit": "git cz"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/383514580/any-event#readme",
   "devDependencies": {
     "@types/jest": "^23.3.5",
+    "commitizen": "^3.0.5",
     "jest": "^23.6.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.67.1",
