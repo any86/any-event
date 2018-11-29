@@ -1,6 +1,6 @@
 {
   "name": "mini-events",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "🍰 一个mini事件管理器",
   "main": "dist/miniEvents.es.js",
   "typings": "src/main.d.ts",
