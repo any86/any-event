@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/383514580/mini-events/compare/v0.2.1...v0.2.2) (2018-11-29)
+
+
+### Bug Fixes
+
+* 错误的打包配置 ([1e7c4bd](https://github.com/383514580/mini-events/commit/1e7c4bd))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/383514580/mini-events/compare/v0.2.0...v0.2.1) (2018-11-29)
 
