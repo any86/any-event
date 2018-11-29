@@ -3,22 +3,22 @@
   "version": "0.1.2",
   "description": "🍰 一个mini事件管理器",
   "main": "dist/miniEvents.es.js",
+  "typings": "src/main.d.ts",
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "test": "jest",
-    "release": "standard-version && npm pub",
-    "commit": "git cz"
+    "release": "standard-version && npm pub && git commit"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/383514580/any-event.git"
+    "url": "git+https://github.com/383514580/mini-events.git"
   },
-  "author": "",
+  "author": "russell",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/383514580/any-event/issues"
+    "url": "https://github.com/383514580/mini-events/issues"
   },
-  "homepage": "https://github.com/383514580/any-event#readme",
+  "homepage": "https://github.com/383514580/mini-events#readme",
   "devDependencies": {
     "@types/jest": "^23.3.5",
     "commitizen": "^3.0.5",
