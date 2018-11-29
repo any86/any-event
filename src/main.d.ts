@@ -1,10 +1,6 @@
-export type Listener = ((...payload: any) => void) & { isOnce?: boolean }
+import {Listener, ListenersMap} from './types';
 
-export interface ListenersMap {
-    [propName: string]: Listener[];
-}
-
-export declare class EventEmitter {
+declare class EventEmitter {
     public listenersMap: ListenersMap;
 
     public on: (eventName: string, listener: Listener) => EventEmitter;
@@ -18,4 +14,4 @@ export declare class EventEmitter {
     public destroy: () => void;
 }
 
-// export = EventEmitter;
+export = EventEmitter;
