@@ -1,11 +1,12 @@
 {
   "name": "mini-events",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "🍰 一个mini事件管理器",
   "main": "dist/miniEvents.es.js",
   "scripts": {
     "build": "rimraf dist && rollup -c",
-    "test": "jest"
+    "test": "jest",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "rimraf": "^2.6.2",
     "rollup": "^0.67.1",
     "rollup-plugin-typescript": "^1.0.0",
+    "standard-version": "^4.4.0",
     "ts-jest": "^23.10.4",
     "tslib": "^1.9.3",
     "typescript": "^3.0.1"
