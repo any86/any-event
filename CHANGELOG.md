@@ -2,5 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/383514580/any-event/compare/v0.0.3...v0.1.0) (2018-11-29)
+
+
+### Features
+
+* 增加声明文件 ([b279b89](https://github.com/383514580/any-event/commit/b279b89))
+
+
+
 <a name="0.0.3"></a>
 ## 0.0.3 (2018-11-29)
