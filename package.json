@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "test": "jest",
-    "release": "standard-version",
+    "release": "standard-version && npm pub",
     "commit": "git cz"
   },
   "repository": {
