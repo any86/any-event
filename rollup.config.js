@@ -8,7 +8,7 @@ export default {
     })],
     output: [{
         format: 'es',
-        file: 'dist/miniEvents.es.js',
+        file: 'index.js',
     }, {
         format: 'umd',
         name: 'miniEvents',
