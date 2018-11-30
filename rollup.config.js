@@ -8,7 +8,10 @@ export default {
     })],
     output: [{
         format: 'cjs',
-        file: 'index.js',
+        file: 'dist/miniEvents.common.js',
+    },{
+        format: 'es',
+        file: 'dist/miniEvents.es.js',
     }, {
         format: 'umd',
         name: 'miniEvents',

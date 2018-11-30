@@ -2,6 +2,8 @@
   "name": "mini-events",
   "version": "0.2.2",
   "description": "🍰 一个mini事件管理器",
+  "main": "dist/miniEvents.common.js",
+  "module": "dist/miniEvents.es.js",
   "typings": "src/main.d.ts",
   "scripts": {
     "build": "rimraf dist && rollup -c",
