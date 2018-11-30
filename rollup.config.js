@@ -7,7 +7,7 @@ export default {
         typescript: require('typescript')
     })],
     output: [{
-        format: 'es',
+        format: 'cjs',
         file: 'index.js',
     }, {
         format: 'umd',
