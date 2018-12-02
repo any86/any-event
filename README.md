@@ -35,7 +35,7 @@ emitter.emit('add', 1);
 
 |名称|类型|数据类型|是否必填|说明|
 |---|---|---|---|---|
-|eventName| 参数 |`String|Symbol`|是|事件名称|
+|eventName| 参数 |`String/Symbol`|是|事件名称|
 |listener| 参数 |`Function`|是|对应的回调函数|
 |emitter| 返回值 |`EventEmitter`|---|实例|
 
@@ -44,7 +44,7 @@ emitter.emit('add', 1);
 
 |名称|类型|数据类型|是否必填|说明|
 |---|---|---|---|---|
-|eventName| 参数 |`String|Symbol`|是|事件名称|
+|eventName| 参数 |`String/Symbol`|是|事件名称|
 |listener| 参数 |`Function`|是|对应的回调函数|
 |emitter| 返回值 |`EventEmitter`|---|实例|
 
@@ -64,7 +64,7 @@ emitter.emit('add', 1);
 
 |名称|类型|数据类型|是否必填|说明|
 |---|---|---|---|---|
-|eventName| 参数 |`String|Symbol`|是|事件名称|
+|eventName| 参数 |`String/Symbol`|是|事件名称|
 |listener| 参数 |`Function`|是|对应的回调函数|
 |emitter| 返回值 |`EventEmitter`|---|实例|
 
@@ -84,7 +84,7 @@ emitter.emit('add', 1);
 
 |名称|类型|数据类型|是否必填|说明|
 |---|---|---|---|---|
-|eventName| 参数 |`String|Symbol`|是|事件名称|
+|eventName| 参数 |`String/Symbol`|是|事件名称|
 | ...args| 参数 |`Any`|是|对应的回调函数|
 |emitter| 返回值 |`Boolean`|---|实例|
 
