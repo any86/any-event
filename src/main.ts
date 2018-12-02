@@ -1,9 +1,9 @@
-import {Listener, ListenersMap} from '../types';
+import { Listener, ListenersMap } from '../types';
 export default class EventEmitter {
-    public listenersMap: ListenersMap;
+    private _listenersMap: ListenersMap;
 
     constructor() {
-        this.listenersMap = {};
+        this._listenersMap = {};
     };
 
     /**
@@ -11,11 +11,11 @@ export default class EventEmitter {
      * @param {String|Symbol} 事件名
      * @param {Function} 回调函数
      */
-    on(eventName: string, listener: Listener): EventEmitter{
-        if (undefined === this.listenersMap[eventName]) {
-            this.listenersMap[eventName] = [];
+    on(eventName: string, listener: Listener): EventEmitter {
+        if (undefined === this._listenersMap[eventName]) {
+            this._listenersMap[eventName] = [];
         }
-        this.listenersMap[eventName].push(listener);
+        this._listenersMap[eventName].push(listener);
         return this;
     };
 
@@ -25,7 +25,7 @@ export default class EventEmitter {
      * @param {String|Symbol} 事件名
      * @param {Function} 回调函数
      */
-    once(eventName: string, listener: Listener) : EventEmitter{
+    once(eventName: string, listener: Listener): EventEmitter {
         listener.isOnce = true;
         this.on(eventName, listener);
         return this;
@@ -38,12 +38,12 @@ export default class EventEmitter {
      * @param {Function} 回调函数[可选]
      */
     off(eventName: string, listener?: Listener): EventEmitter {
-        const listeners = this.listenersMap[eventName];
+        const listeners = this._listenersMap[eventName];
         // 事件存在
         if (undefined !== listeners) {
             // 清空事件名对应的所有回调
             if (undefined === listener) {
-                delete this.listenersMap[eventName];
+                delete this._listenersMap[eventName];
             }
             // 清空指定回调
             else {
@@ -62,8 +62,8 @@ export default class EventEmitter {
      * @param {Any} 载荷数据 
      * @returns {Boolean} 如果事件有监听器，则返回 true，否则返回 false。
      */
-    emit(eventName: string, ...payload: any):boolean {
-        const listeners = this.listenersMap[eventName];
+    emit(eventName: string, ...payload: any): boolean {
+        const listeners = this._listenersMap[eventName];
         if (undefined !== listeners && 0 < listeners.length) {
             for (let [index, listener] of listeners.entries()) {
                 if (listener.isOnce) {
@@ -84,6 +84,6 @@ export default class EventEmitter {
      * 销毁实例
      */
     destroy() {
-        this.listenersMap = {};
+        this._listenersMap = {};
     };
 };

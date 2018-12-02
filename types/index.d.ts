@@ -17,3 +17,5 @@ declare class EventEmitter {
 
     public destroy: () => void;
 }
+
+export default EventEmitter;
