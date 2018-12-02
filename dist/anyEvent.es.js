@@ -49,13 +49,13 @@ function __spread() {
 
 var EventEmitter = (function () {
     function EventEmitter() {
-        this.listenersMap = {};
+        this._listenersMap = {};
     }
     EventEmitter.prototype.on = function (eventName, listener) {
-        if (undefined === this.listenersMap[eventName]) {
-            this.listenersMap[eventName] = [];
+        if (undefined === this._listenersMap[eventName]) {
+            this._listenersMap[eventName] = [];
         }
-        this.listenersMap[eventName].push(listener);
+        this._listenersMap[eventName].push(listener);
         return this;
     };
     EventEmitter.prototype.once = function (eventName, listener) {
@@ -64,10 +64,10 @@ var EventEmitter = (function () {
         return this;
     };
     EventEmitter.prototype.off = function (eventName, listener) {
-        var listeners = this.listenersMap[eventName];
+        var listeners = this._listenersMap[eventName];
         if (undefined !== listeners) {
             if (undefined === listener) {
-                delete this.listenersMap[eventName];
+                delete this._listenersMap[eventName];
             }
             else {
                 var index = listeners.findIndex(function (fn) { return fn === listener; });
@@ -82,7 +82,7 @@ var EventEmitter = (function () {
             payload[_i - 1] = arguments[_i];
         }
         var e_1, _a;
-        var listeners = this.listenersMap[eventName];
+        var listeners = this._listenersMap[eventName];
         if (undefined !== listeners && 0 < listeners.length) {
             try {
                 for (var _b = __values(listeners.entries()), _c = _b.next(); !_c.done; _c = _b.next()) {
@@ -111,7 +111,7 @@ var EventEmitter = (function () {
         }
     };
     EventEmitter.prototype.destroy = function () {
-        this.listenersMap = {};
+        this._listenersMap = {};
     };
     return EventEmitter;
 }());
