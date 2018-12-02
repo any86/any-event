@@ -12,6 +12,6 @@
         "downlevelIteration": true
     },
     "include": [
-        "src/main.ts"
+        "src/main.ts", "types/index.d.ts"
     ]
 }
