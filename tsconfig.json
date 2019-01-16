@@ -2,6 +2,7 @@
     "compilerOptions": {
         "esModuleInterop":true,
         "target": "es3",
+        "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": false,
