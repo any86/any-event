@@ -1,4 +1,13 @@
 import EventEmitter from '../src/main';
+test('has是否正确?', () => {
+    const eventEmitter = new EventEmitter();
+    const mockCallback = jest.fn();
+    eventEmitter.on('abc', mockCallback);
+    expect(eventEmitter.has('abc')).toBeTruthy();
+    expect(eventEmitter.has('def')).toBeFalsy();
+});
+
+
 test('emit传递多个参数是否正确?', () => {
     const eventEmitter = new EventEmitter();
     const add = (n:number[]): number => n.reduce((prev: number, current: number) => {
