@@ -98,6 +98,19 @@ emitter.once('add', callback);
 emitter.emit('add', 1,2,3,4);
 ```
 
+### has(eventName)
+是否绑定了指定事件
+
+|名称|类型|数据类型|是否必填|说明|
+|---|---|---|---|---|
+|eventName| 参数 |`String/Symbol`|是|事件名称|
+
+``` javascript
+emitter.on('add', callback);
+
+emitter.has('add'; // true
+```
+
 ### destroy()
 销毁实例
 
