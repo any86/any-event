@@ -81,6 +81,15 @@ export default class EventEmitter {
     };
 
     /**
+     * 检查是否已绑定事件
+     * @param {String|Symbol} 事件名
+     * @returns {Boolean} 是否已绑定
+     */
+    has(eventName: string): boolean {
+        return undefined !== this._listenersMap[eventName] && 0 < this._listenersMap[eventName].length;
+    };
+
+    /**
      * 销毁实例
      */
     destroy() {

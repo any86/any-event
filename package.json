@@ -1,42 +1,51 @@
 {
-  "name": "any-event",
-  "version": "0.2.1",
-  "description": "🍰 一个mini的事件管理器",
-  "keywords": [
-    "mini",
-    "event",
-    "typescript",
-    "d.ts",
-    "js"
-  ],
-  "main": "dist/anyEvent.common.js",
-  "module": "dist/anyEvent.es.js",
-  "types": "types/index.d.ts",
-  "scripts": {
-    "build": "rimraf dist && rollup -c",
-    "test": "jest",
-    "release": "npm run build && standard-version && npm pub && git push"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/383514580/any-event.git"
-  },
-  "author": "russell",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/383514580/any-event/issues"
-  },
-  "homepage": "https://github.com/383514580/any-event#readme",
-  "devDependencies": {
-    "@types/jest": "^23.3.5",
-    "commitizen": "^3.0.5",
-    "jest": "^23.6.0",
-    "rimraf": "^2.6.2",
-    "rollup": "^0.67.1",
-    "rollup-plugin-typescript": "^1.0.0",
-    "standard-version": "^4.4.0",
-    "ts-jest": "^23.10.4",
-    "tslib": "^1.9.3",
-    "typescript": "^3.0.1"
-  }
+    "name": "any-event",
+    "version": "0.3.4",
+    "description": "🍰 一个mini的事件管理器",
+    "keywords": [
+        "mini",
+        "event",
+        "typescript",
+        "d.ts",
+        "js"
+    ],
+    "unpkg": "dist/AnyEvent.umd.js",
+    "jsdelivr": "dist/AnyEvent.umd.js",
+    "files": [
+        "src",
+        "lib/*",
+        "dist/*.js",
+        "types/*.d.ts"
+    ],
+    "main": "lib/main.js",
+    "module": "dist/AnyEvent.es.js",
+    "types": "lib/main.d.ts",
+    "scripts": {
+        "build": "rimraf dist && rimraf lib && tsc && rollup -c",
+        "test": "jest --no-cache",
+        "release": "npm run build && npm pub && git push"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/383514580/any-event.git"
+    },
+    "author": "russell",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/383514580/any-event/issues"
+    },
+    "homepage": "https://github.com/383514580/any-event#readme",
+    "devDependencies": {
+        "@types/jest": "^23.3.5",
+        "commitizen": "^3.0.5",
+        "jest": "^23.6.0",
+        "minor": "^1.2.3",
+        "rimraf": "^2.6.2",
+        "rollup": "^0.67.1",
+        "rollup-plugin-typescript": "^1.0.0",
+        "standard-version": "^4.4.0",
+        "ts-jest": "^23.10.4",
+        "tslib": "^1.9.3",
+        "typescript": "^3.0.1"
+    }
 }

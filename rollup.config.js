@@ -9,13 +9,13 @@ export default {
     sourcemap: true,
     output: [{
         format: 'cjs',
-        file: 'dist/anyEvent.common.js',
+        file: 'dist/AnyEvent.common.js',
     },{
         format: 'es',
-        file: 'dist/anyEvent.es.js',
+        file: 'dist/AnyEvent.es.js',
     }, {
         format: 'umd',
-        name: 'anyEvent',
-        file: 'dist/anyEvent.umd.js',
+        name: 'AnyEvent',
+        file: 'dist/AnyEvent.umd.js',
     }]
 };

@@ -1,17 +1,19 @@
 {
     "compilerOptions": {
-        "allowJs": true,
         "esModuleInterop":true,
         "target": "es3",
+        "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": false,
         "sourceMap": true,
-        "outDir": "./esm",
+        "outDir": "./lib",
         "lib": ["dom", "es2017"],
-        "downlevelIteration": true
+        "downlevelIteration": true,
+        "declaration": true,
+        "declarationDir": "./lib"
     },
     "include": [
-        "src/main.ts", "types/index.d.ts"
+        "src/main.ts"
     ]
 }
