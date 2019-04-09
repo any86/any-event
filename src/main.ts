@@ -90,6 +90,17 @@ export default class EventEmitter {
     };
 
     /**
+     * 返回所有事件名称
+     */
+    getEventNames(){
+        const eventNames:string[] = [];
+        for(let eventName in this._listenersMap) {
+            eventNames.push(eventName);
+        }
+        return eventNames;
+    };
+
+    /**
      * 销毁实例
      */
     destroy() {

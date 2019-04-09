@@ -59,6 +59,19 @@ test('连续绑定相同事件, 事件触发次数是否正确?', ()=>{
     expect(mockCallback.mock.calls.length).toBe(2);
 });
 
+test('getEventNames是否正确返回所有事件名?', ()=>{
+    const mockCallback = jest.fn();
+    const eventEmitter = new EventEmitter();
+    eventEmitter.on('tap', mockCallback);
+    eventEmitter.on('pan', mockCallback);
+    eventEmitter.on('pinch', mockCallback);
+    expect(eventEmitter.getEventNames().length).toBe(3);
+    expect(eventEmitter.getEventNames()).toContain('tap');
+    expect(eventEmitter.getEventNames()).toContain('pan');
+    expect(eventEmitter.getEventNames()).toContain('pinch');
+});
+
+
 test('destory是否生效?', ()=>{
     const mockCallback = jest.fn();
     const eventEmitter = new EventEmitter();
