@@ -1,4 +1,4 @@
-import { Listener, ListenersMap } from '../types';
+import { Listener, ListenersMap } from './interface';
 export default class EventEmitter {
     private _listenersMap: ListenersMap;
 

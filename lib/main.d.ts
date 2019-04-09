@@ -1,4 +1,4 @@
-import { Listener } from '../types';
+import { Listener } from './interface';
 export default class EventEmitter {
     private _listenersMap;
     constructor();
@@ -7,5 +7,6 @@ export default class EventEmitter {
     off(eventName: string, listener?: Listener): EventEmitter;
     emit(eventName: string, ...payload: any): boolean;
     has(eventName: string): boolean;
+    getEventNames(): string[];
     destroy(): void;
 }
