@@ -1,6 +1,6 @@
 {
     "name": "any-event",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "description": "🍰 一个mini的事件管理器",
     "keywords": [
         "mini",
@@ -14,8 +14,7 @@
     "files": [
         "src",
         "lib/*",
-        "dist/*.js",
-        "types/*.d.ts"
+        "dist/*.js"
     ],
     "main": "lib/main.js",
     "module": "dist/AnyEvent.es.js",
