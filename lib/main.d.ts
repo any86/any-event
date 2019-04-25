@@ -1,4 +1,6 @@
-import { Listener } from './interface';
+declare type Listener = ((...payload: any) => void) & {
+    isOnce?: boolean;
+};
 export default class EventEmitter {
     private _listenersMap;
     constructor();
@@ -8,5 +10,7 @@ export default class EventEmitter {
     emit(eventName: string, ...payload: any): boolean;
     has(eventName: string): boolean;
     getEventNames(): string[];
+    eventNames(): string[];
     destroy(): void;
 }
+export {};

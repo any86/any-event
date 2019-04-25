@@ -1,4 +1,8 @@
-import { Listener, ListenersMap } from './interface';
+type Listener = ((...payload: any) => void) & { isOnce?: boolean }
+
+interface ListenersMap {
+    [propName: string]: Listener[];
+}
 export default class EventEmitter {
     private _listenersMap: ListenersMap;
 
@@ -35,7 +39,7 @@ export default class EventEmitter {
      * 解除绑定 
      * 如果不指定listener, 那么解除所有eventName对应回调
      * @param {String|Symbol} 事件名
-     * @param {Function} 回调函数[可选]
+     * @param {Function} 回调函数
      */
     off(eventName: string, listener?: Listener): EventEmitter {
         const listeners = this._listenersMap[eventName];
@@ -92,13 +96,20 @@ export default class EventEmitter {
     /**
      * 返回所有事件名称
      */
-    getEventNames(){
-        const eventNames:string[] = [];
-        for(let eventName in this._listenersMap) {
+    getEventNames() {
+        const eventNames: string[] = [];
+        for (let eventName in this._listenersMap) {
             eventNames.push(eventName);
         }
         return eventNames;
     };
+
+    /**
+     * getEventNames别名, 为了和node的api一致
+     */
+    eventNames() {
+        return this.getEventNames();
+    }
 
     /**
      * 销毁实例

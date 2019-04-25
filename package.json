@@ -1,6 +1,6 @@
 {
     "name": "any-event",
-    "version": "0.3.5",
+    "version": "0.3.6",
     "description": "🍰 一个mini的事件管理器",
     "keywords": [
         "mini",
@@ -11,14 +11,15 @@
     ],
     "unpkg": "dist/AnyEvent.umd.js",
     "jsdelivr": "dist/AnyEvent.umd.js",
+    "main": "lib/main.js",
+    "module": "dist/AnyEvent.es.js",
+    "browser": "dist/AnyEvent.umd.js",
+    "types": "lib/main.d.ts",
     "files": [
         "src",
         "lib/*",
         "dist/*.js"
     ],
-    "main": "lib/main.js",
-    "module": "dist/AnyEvent.es.js",
-    "types": "lib/main.d.ts",
     "scripts": {
         "build": "rimraf dist && rimraf lib && tsc && rollup -c",
         "test": "jest --no-cache",
@@ -36,9 +37,7 @@
     "homepage": "https://github.com/383514580/any-event#readme",
     "devDependencies": {
         "@types/jest": "^23.3.5",
-        "commitizen": "^3.0.5",
         "jest": "^23.6.0",
-        "minor": "^1.2.3",
         "rimraf": "^2.6.2",
         "rollup": "^0.67.1",
         "rollup-plugin-typescript": "^1.0.0",

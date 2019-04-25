@@ -65,7 +65,7 @@ test('getEventNames是否正确返回所有事件名?', ()=>{
     eventEmitter.on('tap', mockCallback);
     eventEmitter.on('pan', mockCallback);
     eventEmitter.on('pinch', mockCallback);
-    expect(eventEmitter.getEventNames().length).toBe(3);
+    expect(eventEmitter.eventNames().length).toBe(3);
     expect(eventEmitter.getEventNames()).toContain('tap');
     expect(eventEmitter.getEventNames()).toContain('pan');
     expect(eventEmitter.getEventNames()).toContain('pinch');
