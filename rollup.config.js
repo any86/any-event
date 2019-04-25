@@ -6,14 +6,17 @@ export default {
         exclude: 'node_modules/**',
         typescript: require('typescript')
     })],
-    sourcemap: true,
+    
     output: [{
+        sourcemap: true,
         format: 'cjs',
         file: 'dist/AnyEvent.common.js',
     },{
+        sourcemap: true,
         format: 'es',
         file: 'dist/AnyEvent.es.js',
     }, {
+        sourcemap: true,
         format: 'umd',
         name: 'AnyEvent',
         file: 'dist/AnyEvent.umd.js',
