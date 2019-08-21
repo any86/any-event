@@ -2,17 +2,16 @@
     "compilerOptions": {
         "strict": true,
         "esModuleInterop":true,
-        "target": "es3",
-        "module": "commonjs",
+        "target": "es6",
+        // "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": false,
         "sourceMap": true,
-        "outDir": "./lib",
-        "lib": ["dom", "es2017"],
-        "downlevelIteration": true,
+        "outDir": "./dist",
+        // "downlevelIteration": true,
         "declaration": true,
-        "declarationDir": "./lib"
+        "declarationDir": "./dist"
     },
     "include": [
         "src/main.ts"

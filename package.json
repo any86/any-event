@@ -1,40 +1,34 @@
 {
     "name": "any-event",
-    "version": "0.3.6",
+    "version": "0.3.7",
     "description": "🍰 一个mini的事件管理器",
     "keywords": [
         "mini",
         "event",
-        "typescript",
-        "d.ts",
-        "js"
+        "emitter",
+        "typescript"
     ],
-    "unpkg": "dist/AnyEvent.umd.js",
-    "jsdelivr": "dist/AnyEvent.umd.js",
-    "main": "lib/main.js",
-    "module": "dist/AnyEvent.es.js",
-    "browser": "dist/AnyEvent.umd.js",
-    "types": "lib/main.d.ts",
+    "main": "dist/main.js",
+    "module": "dist/main.js",
+    "types": "dist/main.d.ts",
     "files": [
-        "src",
-        "lib/*",
-        "dist/*.js"
+        "dist/*"
     ],
     "scripts": {
-        "build": "rimraf dist && rimraf lib && tsc && rollup -c",
+        "build": "rimraf dist && tsc",
         "test": "jest --no-cache",
-        "release": "npm run build && npm pub && git push"
+        "release": "npm run test && npm run build && npm pub && git push"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/383514580/any-event.git"
+        "url": "git+https://github.com/any86/any-event.git"
     },
     "author": "russell",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/383514580/any-event/issues"
+        "url": "https://github.com/any86/any-event/issues"
     },
-    "homepage": "https://github.com/383514580/any-event#readme",
+    "homepage": "https://github.com/any86/any-event#readme",
     "devDependencies": {
         "@types/jest": "^23.3.5",
         "jest": "^23.6.0",
@@ -43,7 +37,6 @@
         "rollup-plugin-typescript": "^1.0.0",
         "standard-version": "^4.4.0",
         "ts-jest": "^23.10.4",
-        "tslib": "^1.9.3",
         "typescript": "^3.0.1"
     }
 }
