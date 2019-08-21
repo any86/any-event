@@ -10,7 +10,10 @@
 [ci-image]: https://circleci.com/gh/any86/any-event.svg?style=svg
 [ci-url]: https://circleci.com/gh/any86/any-event
 
-:cake: 一个mini的事件管理器, 希望能在您的代码中做一块砖, 支持node/browser.
+:cake: 🍰  不到1k, 一个mini的事件管理器,  希望能在您的代码中做一块砖.
+
+## 注意
+为了防止冗余代码, 包内仅包含es6模块.
 
 ## 安装
 
