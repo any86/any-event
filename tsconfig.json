@@ -1,17 +1,23 @@
 {
     "compilerOptions": {
         "strict": true,
-        "esModuleInterop":true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
         "target": "es6",
-        "module": "commonjs",
+        // "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": false,
         "sourceMap": true,
         "outDir": "./dist",
-        // "downlevelIteration": true,
+        "downlevelIteration": true,
         "declaration": true,
-        "declarationDir": "./dist"
+        "declarationDir": "./dist",
+        // 告诉编辑器你需要的语法提示的版本
+        "lib": [
+            "esnext"
+        ],
+        // "noEmitHelpers": true
     },
     "include": [
         "src/main.ts"

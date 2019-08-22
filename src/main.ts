@@ -1,7 +1,5 @@
 type Listener = ((...payload: any) => void) & { isOnce?: boolean }
 
-// 对象的键值一直不支持symbol...
-// https://github.com/Microsoft/TypeScript/issues/1863
 interface ListenersMap {
     [propName: string]: Listener[];
 }
@@ -17,7 +15,7 @@ export default class AnyEvent {
      * @param {String|Symbol} 事件名
      * @param {Function} 回调函数
      */
-    on(eventName: string, listener: Listener): ThisType<AnyEvent> {
+    on(eventName: string, listener: Listener): AnyEvent {
         if (undefined === this._listenersMap[eventName]) {
             this._listenersMap[eventName] = [];
         }
@@ -31,7 +29,7 @@ export default class AnyEvent {
      * @param {String|Symbol} 事件名
      * @param {Function} 回调函数
      */
-    once(eventName: string, listener: Listener): ThisType<AnyEvent> {
+    once(eventName: string, listener: Listener): AnyEvent {
         listener.isOnce = true;
         this.on(eventName, listener);
         return this;
@@ -43,7 +41,7 @@ export default class AnyEvent {
      * @param {String|Symbol} 事件名
      * @param {Function} 回调函数
      */
-    off(eventName: string, listener?: Listener): ThisType<AnyEvent> {
+    off(eventName: string, listener?: Listener): AnyEvent {
         const listeners = this._listenersMap[eventName];
         // 事件存在
         if (undefined !== listeners) {
@@ -68,11 +66,10 @@ export default class AnyEvent {
      * @param {Any} 载荷数据 
      * @returns {Boolean} 如果事件有监听器，则返回 true，否则返回 false。
      */
-    emit(eventName: string, ...payload: any[]): boolean {
+    emit(eventName: string, ...payload: any): boolean {
         const listeners = this._listenersMap[eventName];
         if (undefined !== listeners && 0 < listeners.length) {
             for (let [index, listener] of listeners.entries()) {
-                // once
                 if (listener.isOnce) {
                     let listenerClone = listener;
                     listeners.splice(index, 1);
@@ -99,7 +96,7 @@ export default class AnyEvent {
     /**
      * 返回所有事件名称
      */
-    getEventNames():string[] {
+    getEventNames() {
         const eventNames: string[] = [];
         for (let eventName in this._listenersMap) {
             eventNames.push(eventName);
@@ -110,7 +107,7 @@ export default class AnyEvent {
     /**
      * getEventNames别名, 为了和node的api一致
      */
-    eventNames():ReturnType<AnyEvent['getEventNames']> {
+    eventNames() {
         return this.getEventNames();
     }
 
