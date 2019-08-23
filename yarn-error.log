@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add @ant-design/colors
+  /usr/local/bin/node /usr/local/bin/yarn add npm-run-all
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EACCES: permission denied, mkdir '/Applications/MAMP/htdocs/any-event/node_modules/anymatch/node_modules/define-property'
+  Error: EACCES: permission denied, mkdir '/Applications/MAMP/htdocs/any-event/node_modules/anymatch/node_modules/braces/node_modules/is-extendable'
 
 npm manifest: 
   {
@@ -27,14 +27,19 @@ npm manifest:
           "emitter",
           "typescript"
       ],
-      "main": "dist/main.js",
-      "module": "dist/main.js",
-      "types": "dist/main.d.ts",
+      "main": "lib/main.js",
+      "module": "lib/main.js",
+      "types": "lib/main.d.ts",
       "files": [
-          "dist/*"
+          "lib/*",
+          "src/*"
       ],
       "scripts": {
-          "build": "rimraf dist && tsc",
+          "build:es5": "rimraf lib/esm5 && tsc -p ./tsconfigs/esm5.json",
+          "build:es6": "rimraf lib/esm6 && tsc -p ./tsconfigs/esm6.json",
+          "build:cjs": "rimraf lib/cjs && tsc -p ./tsconfigs/cjs.json",
+          "build:type": "rimraf types && tsc -p ./tsconfigs/type.json",
+          "build": "npm-run-all build:es5 build:es6 build:cjs  build:type",
           "test": "jest --no-cache",
           "release": "npm run test && npm run build && npm pub && git push"
       },

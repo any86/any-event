@@ -3,19 +3,19 @@
         "strict": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "target": "es6",
+        // "target": "es5",
         // "module": "commonjs",
+        // "module": "umd",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": false,
         "sourceMap": true,
-        "outDir": "./dist",
+        // "outDir": "./lib/cjs",
         "downlevelIteration": true,
-        "declaration": true,
-        "declarationDir": "./dist",
+
         // 告诉编辑器你需要的语法提示的版本
         "lib": [
-            "esnext"
+            "es6"
         ],
         // "noEmitHelpers": true
     },

@@ -8,14 +8,20 @@
         "emitter",
         "typescript"
     ],
-    "main": "dist/main.js",
-    "module": "dist/main.js",
-    "types": "dist/main.d.ts",
+    "main": "lib/cjs/main.js",
+    "module": "lib/es6/main.js",
+    "types": "types/main.d.ts",
     "files": [
-        "dist/*"
+        "lib/**/*",
+        "types/*",
+        "src/**/*"
     ],
     "scripts": {
-        "build": "rimraf dist && tsc",
+        "build:es5": "rimraf lib/esm5 && tsc -p ./tsconfigs/esm5.json",
+        "build:es6": "rimraf lib/esm6 && tsc -p ./tsconfigs/esm6.json",
+        "build:cjs": "rimraf lib/cjs && tsc -p ./tsconfigs/cjs.json",
+        "build:type": "rimraf types && tsc -p ./tsconfigs/type.json",
+        "build": "npm-run-all build:es5 build:es6 build:cjs  build:type",
         "test": "jest --no-cache",
         "release": "npm run test && npm run build && npm pub && git push"
     },
@@ -35,9 +41,8 @@
         "rimraf": "^2.6.2",
         "standard-version": "^4.4.0",
         "ts-jest": "^23.10.4",
-        "typescript": "^3.0.1"
-    },
-    "dependencies": {
+        "typescript": "^3.0.1",
+        "npm-run-all": "^4.1.5",
         "tslib": "^1.10.0"
     }
 }
