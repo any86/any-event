@@ -1,48 +1,48 @@
 {
-    "name": "any-event",
-    "version": "0.4.0",
-    "description": "🍰 一个mini的事件管理器",
-    "keywords": [
-        "mini",
-        "event",
-        "emitter",
-        "typescript"
-    ],
-    "main": "lib/cjs/main.js",
-    "module": "lib/esm5/main.js",
-    "types": "types/main.d.ts",
-    "files": [
-        "lib/**/*",
-        "types/*",
-        "src/**/*"
-    ],
-    "scripts": {
-        "build:es5": "rimraf lib/esm5 && tsc -p ./tsconfigs/esm5.json",
-        "build:es6": "rimraf lib/esm6 && tsc -p ./tsconfigs/esm6.json",
-        "build:cjs": "rimraf lib/cjs && tsc -p ./tsconfigs/cjs.json",
-        "build:type": "rimraf types && tsc -p ./tsconfigs/type.json",
-        "build": "npm-run-all build:es5 build:es6 build:cjs  build:type",
-        "test": "jest --no-cache",
-        "release": "npm run test && npm run build && npm pub && git push"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/any86/any-event.git"
-    },
-    "author": "russell",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/any86/any-event/issues"
-    },
-    "homepage": "https://github.com/any86/any-event#readme",
-    "devDependencies": {
-        "@types/jest": "^23.3.5",
-        "jest": "^23.6.0",
-        "rimraf": "^2.6.2",
-        "standard-version": "^4.4.0",
-        "ts-jest": "^23.10.4",
-        "typescript": "^3.0.1",
-        "npm-run-all": "^4.1.5",
-        "tslib": "^1.10.0"
-    }
+  "name": "any-event",
+  "version": "0.4.0",
+  "description": "🍰 一个mini的事件管理器",
+  "keywords": [
+    "mini",
+    "event",
+    "emitter",
+    "typescript"
+  ],
+  "main": "lib/cjs/main.js",
+  "module": "lib/esm5/main.js",
+  "types": "types/main.d.ts",
+  "files": [
+    "lib/**/*",
+    "types/*",
+    "src/**/*"
+  ],
+  "scripts": {
+    "build:es5": "rimraf lib/esm5 && tsc -p ./tsconfigs/esm5.json",
+    "build:es6": "rimraf lib/esm6 && tsc -p ./tsconfigs/esm6.json",
+    "build:cjs": "rimraf lib/cjs && tsc -p ./tsconfigs/cjs.json",
+    "build:type": "rimraf types && tsc -p ./tsconfigs/type.json",
+    "build": "npm-run-all build:es5 build:es6 build:cjs  build:type",
+    "test": "jest --no-cache",
+    "release": "npm-run-all test build && standard-version && npm pub && git push && rimraf lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/any86/any-event.git"
+  },
+  "author": "russell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/any86/any-event/issues"
+  },
+  "homepage": "https://github.com/any86/any-event#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.5",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.2",
+    "standard-version": "^4.4.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "tslib": "^1.10.0"
+  }
 }

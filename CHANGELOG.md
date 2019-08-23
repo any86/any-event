@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/any86/any-event/compare/v0.3.0...v0.4.0) (2019-08-23)
+
+
+### Bug Fixes
+
+* 修改"module"指向es5版本的es6模块 ([93af035](https://github.com/any86/any-event/commit/93af035))
+
+
+### Features
+
+* 增加getEventNames返回所有事件名称 ([e7a61a6](https://github.com/any86/any-event/commit/e7a61a6))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/any86/any-event/compare/v0.2.1...v0.3.0) (2019-01-16)
 
