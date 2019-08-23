@@ -1,6 +1,6 @@
 {
     "name": "any-event",
-    "version": "0.3.9",
+    "version": "0.4.0",
     "description": "🍰 一个mini的事件管理器",
     "keywords": [
         "mini",
@@ -9,7 +9,7 @@
         "typescript"
     ],
     "main": "lib/cjs/main.js",
-    "module": "lib/es6/main.js",
+    "module": "lib/esm5/main.js",
     "types": "types/main.d.ts",
     "files": [
         "lib/**/*",
