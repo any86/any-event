@@ -1,9 +1,8 @@
 {
-    "extends": "../tsconfig",
+    "extends": "./tsconfig",
     "compilerOptions": {
-        "target": "es6",
         "declaration": true,
-        "declarationDir": "../types",
+        "declarationDir": "./types",
         "emitDeclarationOnly": true
     }
 }
