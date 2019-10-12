@@ -56,7 +56,7 @@ const callback = data=>{
 };
 emitter.on('add', callback);
 // 解除绑定
-emitter.on('off', callback);
+emitter.off('add', callback);
 // add事件不会触发
 emitter.emit('add', 1);
 ```
